@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cu3er>
+	<settings>
+
+        <description>
+            <defaults heading_font="Arial"/>
+        </description>
+
+		<auto_play>
+          <defaults symbol="circular" time="7"/>
+          <tweenIn />
+          <tweenOut />
+          <tweenOver />
+      	</auto_play>
+
+
+    	<prev_button>
+			<defaults round_corners="5,5,5,5"/>
+			<tweenOver tint="0xFFFFFF" scaleX="1.1" scaleY="1.1"/>
+			<tweenOut tint="0x000000" />
+		</prev_button>
+
+    	<prev_symbol>
+			<tweenOver tint="0x000000" />
+		</prev_symbol>
+
+    	<next_button>
+			<defaults round_corners="5,5,5,5"/>
+			<tweenOver tint="0xFFFFFF"  scaleX="1.1" scaleY="1.1"/>
+			<tweenOut tint="0x000000" />
+		</next_button>
+
+    	<next_symbol>
+			<tweenOver tint="0x000000" />
+		</next_symbol>
+
+	</settings>
+
+	<slides>
+
+        <slide>
+            <url>images/cover/1.jpg</url>
+            <link target="_self">/socialaction/</link>
+            <description>
+                <heading>Faith Mission Homeless Shelter</heading>
+                <paragraph>The YAC Youth helping out at the Faith Mission Homeless Shelter in March during the Social Action Con in Columbus</paragraph>
+            </description>
+        </slide>
+
+        <transition num="3" slicing="vertical" direction="down" z_multiplier="1"/>
+
+        <slide>
+       		<url>images/cover/2.jpg</url>
+            <link target="_self">/socialaction/</link>
+            <description>
+                <heading>Faith Mission Homeless Shelter</heading>
+                <paragraph>Youth walking around Columbus during the Social Action Con with the Faith Mission Homeless Shelter cleaning up trash</paragraph>
+            </description>
+        </slide>
+
+        <transition num="4" direction="right" z_multiplier="2" />
+
+		<slide>
+            <url>images/cover/3.jpg</url>
+            <description>
+                <heading>Ultimate Frisbee</heading>
+            </description>
+        </slide>
+
+        <transition num="8" direction="up" slicing="vertical" z_multiplier="5"/>
+
+		<slide>
+       		<url>images/cover/4.jpg</url>
+            <description>
+                <heading>Opening cirlce at the Social Action Con</heading>
+            </description>
+        </slide>
+
+		<transition num="6" direction="up" delay="0.05" z_multiplier="2"/>
+
+        <slide>
+       		<url>images/cover/5.jpg</url>
+        </slide>
+
+        <transition num="10" direction="right" shader="flat" z_multiplier="5" />
+
+        <slide>
+       		<url>images/cover/6.jpg</url>
+        </slide>
+
+        <transition num="3" direction="up" slicing="vertical" shader="none" z_multiplier="0" />
+
+        <slide>
+       		<url>images/cover/7.jpg</url>
+        </slide>
+
+        <transition num="5" direction="left" slicing="vertical" shader="none" z_multiplier="2" />
+
+        <slide>
+       		<url>images/cover/8.jpg</url>
+        </slide>
+
+        <transition num="7" direction="down" slicing="vertical" shader="none" z_multiplier="2" />
+
+        <slide>
+       		<url>images/cover/9.jpg</url>
+        </slide>
+
+        <transition num="1" direction="right" slicing="horizontal" shader="none" z_multiplier="1" />
+
+        <slide>
+       		<url>images/cover/10.jpg</url>
+        </slide>
+
+        <transition num="10" direction="left" slicing="vertical" shader="none" z_multiplier="3" />
+
+        <slide>
+       		<url>images/cover/11.jpg</url>
+        </slide>
+
+        <transition num="7" direction="right" slicing="horizontal" shader="none" z_multiplier="3" />
+
+        <slide>
+       		<url>images/cover/12.jpg</url>
+        </slide>
+
+       <transition num="8" direction="down" slicing="horizontal" shader="none" z_multiplier="3" />
+
+        <slide>
+       		<url>images/cover/13.jpg</url>
+        </slide>
+
+        <transition num="5" direction="right" slicing="vertical" shader="none" z_multiplier="0" />
+
+	</slides>
+</cu3er>
+
