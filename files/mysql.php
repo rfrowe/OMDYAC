@@ -36,10 +36,10 @@ class MySQL_Utilities
 		$database = $this->db;
         if(!$this->con)
         {
-            $myconn = @mysql_connect($this->db_host,$this->db_user,$this->db_pass);
+            $myconn = @($GLOBALS["___mysqli_ston"] = mysqli_connect($this->db_host, $this->db_user, $this->db_pass));
             if($myconn)
             {
-                $seldb = @mysql_select_db($database,$myconn);
+                $seldb = @((bool)mysqli_query($myconn, "USE " . $database));
                 if($seldb)
                 {
                     $this->con = true;
@@ -69,7 +69,7 @@ class MySQL_Utilities
     {
         if($this->con)
         {
-            if(@mysql_close())
+            if(@((is_null($___mysqli_res = mysqli_close($GLOBALS["___mysqli_ston"]))) ? false : $___mysqli_res))
             {
                 $this->con = false;
                 $this->results = null;
@@ -117,23 +117,23 @@ class MySQL_Utilities
         if($order != null)
             $q .= ' ORDER BY '.$order;
 
-        $query = mysql_query($q);
+        $query = mysqli_query($GLOBALS["___mysqli_ston"], $q);
         if($query)
         {
-            $this->numResults = mysql_num_rows($query);
+            $this->numResults = mysqli_num_rows($query);
             for($i = 0; $i < $this->numResults; $i++)
             {
-                $r = mysql_fetch_array($query);
+                $r = mysqli_fetch_array($query);
                 $key = array_keys($r);
                 for($x = 0; $x < count($key); $x++)
                 {
                     // Sanitizes keys so only alphavalues are allowed
                     if(!is_int($key[$x]))
                     {
-                        if(mysql_num_rows($query) > 1) {
+                        if(mysqli_num_rows($query) > 1) {
                             $this->result[$i][$key[$x]] = stripslashes($r[$key[$x]]);
 						}
-                        else if(mysql_num_rows($query) < 1) {
+                        else if(mysqli_num_rows($query) < 1) {
                             $this->result = null;
 						}
 						else {
@@ -162,7 +162,7 @@ class MySQL_Utilities
         {
 			foreach ($values as $bleh):
 
-			$values[array_search($bleh,$values)] = mysql_real_escape_string(stripslashes($bleh));
+			$values[array_search($bleh,$values)] = ((isset($GLOBALS["___mysqli_ston"]) && is_object($GLOBALS["___mysqli_ston"])) ? mysqli_real_escape_string($GLOBALS["___mysqli_ston"], stripslashes($bleh)) : ((trigger_error("[MySQLConverterToo] Fix the mysql_escape_string() call! This code does not work.", E_USER_ERROR)) ? "" : ""));
 
 			endforeach;
 
@@ -180,7 +180,7 @@ class MySQL_Utilities
             $values = implode(',',$values);
             $insert .= ' VALUES ('.$values.')';
 
-			$ins = @mysql_query($insert);
+			$ins = @mysqli_query($GLOBALS["___mysqli_ston"], $insert);
 
             if($ins)
             {
@@ -210,7 +210,7 @@ class MySQL_Utilities
             {
                 $delete = 'DELETE FROM '.$table.' WHERE '.$where;
             }
-            $del = @mysql_query($delete);
+            $del = @mysqli_query($GLOBALS["___mysqli_ston"], $delete);
 
             if($del)
             {
@@ -276,7 +276,7 @@ class MySQL_Utilities
                 }
             }
             $update .= ' WHERE '.$where;
-            $query = @mysql_query($update);
+            $query = @mysqli_query($GLOBALS["___mysqli_ston"], $update);
             if($query)
             {
                 return true;

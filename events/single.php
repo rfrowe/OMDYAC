@@ -252,7 +252,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
 
 				$mysql = new MySQL_Utilities;
 				$mysql->connect("omdyac");
-				$mysql->select("Events","*","id = ".mysql_real_escape_string(stripslashes($_GET['e'])));
+				$mysql->select("Events","*","id = ".((isset($GLOBALS["___mysqli_ston"]) && is_object($GLOBALS["___mysqli_ston"])) ? mysqli_real_escape_string($GLOBALS["___mysqli_ston"], stripslashes($_GET['e'])) : ((trigger_error("[MySQLConverterToo] Fix the mysql_escape_string() call! This code does not work.", E_USER_ERROR)) ? "" : "")));
 				$eventInfo = $mysql->getResult();
 				if(count($eventInfo) == 0) {
 					echo "<script language='javascript'>alert('There was an error retrieving the event information. Please contact the webmaster at redacted@address.com'); window.location = './'</script>";
@@ -268,7 +268,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
 				if($eventInfo['YacMeeting'] == false) {
 				$sql2 = new MySQL_Utilities;
 				$sql2->connect("omdyac");
-				$sql2->select("ConStuff","*","conid = ".mysql_real_escape_string(stripslashes($_GET['e'])));
+				$sql2->select("ConStuff","*","conid = ".((isset($GLOBALS["___mysqli_ston"]) && is_object($GLOBALS["___mysqli_ston"])) ? mysqli_real_escape_string($GLOBALS["___mysqli_ston"], stripslashes($_GET['e'])) : ((trigger_error("[MySQLConverterToo] Fix the mysql_escape_string() call! This code does not work.", E_USER_ERROR)) ? "" : "")));
 				$conInfo = $sql2->getResult();
 				$conInfo = $conInfo['1'];
 				$nightAngels = explode("|",$conInfo['NightAngels']);
