@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/work/omdyac/public_html/files/recaptchalib.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/work/omdyac/files/recaptchalib.php');
   session_start();
   $privatekey = "REDACTED";
   $resp = recaptcha_check_answer ($privatekey,

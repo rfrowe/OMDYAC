@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/files/mysql.php");
 $content = "";
 $subject = "";
 $name = "";
@@ -22,15 +22,15 @@ if(isset($_SESSION['content'])) {
 
 	<title>OMD YAC • Contact</title>
 
-	<link rel="stylesheet" href="/work/omdyac/public_html/style.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="/work/omdyac/public_html/css/theme.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/work/omdyac/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/work/omdyac/css/theme.css" type="text/css" media="all" />
 
-    <link rel="icon" type="image/png" href="/work/omdyac/public_html/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/work/omdyac/images/favicon.png" />
 
-	<link rel="stylesheet" href="/work/omdyac/public_html/js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="all" charset="utf-8" />
+	<link rel="stylesheet" href="/work/omdyac/js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="all" charset="utf-8" />
 
-	<script type='text/javascript' src='/work/omdyac/public_html/js/jquery.js'></script>
-	<script src="/work/omdyac/public_html/js/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+	<script type='text/javascript' src='/work/omdyac/js/jquery.js'></script>
+	<script src="/work/omdyac/js/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 
     <script language="javascript">
 	function checkEmail() {
@@ -94,10 +94,10 @@ if(isset($_SESSION['content'])) {
 	<div id="top">
 
 		<div id="head">
-                <h1 class="logo ie6fix"><a href="/work/omdyac/public_html/" title="">OMD YAC</a></h1>
+                <h1 class="logo ie6fix"><a href="/work/omdyac/" title="">OMD YAC</a></h1>
                 <ul id="nav">
-            <li><a href="/work/omdyac/public_html/"><strong>Home</strong><span>YAC Homepage</span></a></li>
-            <li><a href="/work/omdyac/public_html/events/"><strong>Events</strong><span>Events and Info</span></a>
+            <li><a href="/work/omdyac/"><strong>Home</strong><span>YAC Homepage</span></a></li>
+            <li><a href="/work/omdyac/events/"><strong>Events</strong><span>Events and Info</span></a>
                 <ul>
                     <?php
                         $mysql = new MySQL_Utilities;
@@ -106,13 +106,13 @@ if(isset($_SESSION['content'])) {
                         $conList = $mysql->getResult();
 
                                 foreach($conList as $con) {
-                                    echo "<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."'>".$con['Title']." &raquo;</a>\n";
+                                    echo "<li><a href='/work/omdyac/events/?e=".$con['id']."'>".$con['Title']." &raquo;</a>\n";
 
                                         echo "\t<ul>\n";
 
                                             //START REGISTRATION
                                             if(strlen($con['YouthLink']) != 0 || strlen($con['AdultLink']) != 0) {
-                                                echo "\t\t<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."#reg'>Registration &raquo;</a>\n";
+                                                echo "\t\t<li><a href='/work/omdyac/events/?e=".$con['id']."#reg'>Registration &raquo;</a>\n";
                                                     echo "\t\t\t<ul>\n";
 
                                                     if(strlen($con['YouthLink']) != 0) {
@@ -128,7 +128,7 @@ if(isset($_SESSION['content'])) {
                                             //END REGISTRATION
 
                                             //START LOCATION
-                                            echo "\t\t<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."#loc'>Location &raquo;</a>\n";
+                                            echo "\t\t<li><a href='/work/omdyac/events/?e=".$con['id']."#loc'>Location &raquo;</a>\n";
                                                 echo "\t\t\t<ul>\n";
 
                                                     echo "\t\t\t\t<li><a href='".$con['MapLink']."'>Google Maps</a></li>\n";
@@ -138,7 +138,7 @@ if(isset($_SESSION['content'])) {
                                             //END LOCATION
 
                                             //START YOUTH FORMS
-                                            echo "\t\t<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."#forms'>Youth Forms &raquo;</a>\n";
+                                            echo "\t\t<li><a href='/work/omdyac/events/?e=".$con['id']."#forms'>Youth Forms &raquo;</a>\n";
                                                 echo "\t\t\t<ul>\n";
 
                                                     foreach(explode("|",$con['YouthForms']) as $formID) {
@@ -147,7 +147,7 @@ if(isset($_SESSION['content'])) {
                                                         $mysql->select("documents",'*',"id = ".$formID);
                                                         $form = $mysql->getResult();
                                                         $form = $form['1'];
-                                                        echo "\t\t\t\t<li><a href='/work/omdyac/public_html/documents/".$form['Link']."'>".$form['Name']."</a></li>\n";
+                                                        echo "\t\t\t\t<li><a href='/work/omdyac/documents/".$form['Link']."'>".$form['Name']."</a></li>\n";
                                                     }
 
                                                 echo "\t\t\t</ul>\n";
@@ -155,7 +155,7 @@ if(isset($_SESSION['content'])) {
                                             //END YOUTH FORMS
 
                                             //START ADULT FORMS
-                                            echo "\t\t<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."#forms'>Adult Forms &raquo;</a>\n";
+                                            echo "\t\t<li><a href='/work/omdyac/events/?e=".$con['id']."#forms'>Adult Forms &raquo;</a>\n";
                                                 echo "\t\t\t<ul>\n";
 
                                                     foreach(explode("|",$con['AdultForms']) as $formID) {
@@ -164,7 +164,7 @@ if(isset($_SESSION['content'])) {
                                                         $mysql->select("documents",'*',"id = ".$formID);
                                                         $form = $mysql->getResult();
                                                         $form = $form['1'];
-                                                        echo "\t\t\t\t<li><a href='/work/omdyac/public_html/documents/".$form['Link']."'>".$form['Name']."</a></li>\n";
+                                                        echo "\t\t\t\t<li><a href='/work/omdyac/documents/".$form['Link']."'>".$form['Name']."</a></li>\n";
                                                     }
 
                                                 echo "\t\t\t</ul>\n";
@@ -173,13 +173,13 @@ if(isset($_SESSION['content'])) {
 
                                             //START CON INFO
                                             if(!$con['YacMeeting']) {
-                                                echo "\t\t<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."#coninfo'>Con Info &raquo;</a>\n";
+                                                echo "\t\t<li><a href='/work/omdyac/events/?e=".$con['id']."#coninfo'>Con Info &raquo;</a>\n";
                                                     echo "\t\t\t<ul>\n";
 
-                                                        echo "\t\t\t\t<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."#touchgroups'>Touchgroups</a></li>\n";
-                                                        echo "\t\t\t\t<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."#workshops'>Workshops</a></li>\n";
-                                                        echo "\t\t\t\t<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."#chaplains'>Chaplains</a></li>\n";
-                                                        echo "\t\t\t\t<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."#nightangels'>Nightangels</a></li>\n";
+                                                        echo "\t\t\t\t<li><a href='/work/omdyac/events/?e=".$con['id']."#touchgroups'>Touchgroups</a></li>\n";
+                                                        echo "\t\t\t\t<li><a href='/work/omdyac/events/?e=".$con['id']."#workshops'>Workshops</a></li>\n";
+                                                        echo "\t\t\t\t<li><a href='/work/omdyac/events/?e=".$con['id']."#chaplains'>Chaplains</a></li>\n";
+                                                        echo "\t\t\t\t<li><a href='/work/omdyac/events/?e=".$con['id']."#nightangels'>Nightangels</a></li>\n";
 
                                                     echo "\t\t\t</ul>\n";
                                                 echo "\t\t</li>\n";
@@ -193,14 +193,14 @@ if(isset($_SESSION['content'])) {
                             ?>
                         </ul>
                     </li>
-                    <li><a href="/work/omdyac/public_html/documents/"><strong>Documents</strong><span>Docs and Minutes</span></a>
+                    <li><a href="/work/omdyac/documents/"><strong>Documents</strong><span>Docs and Minutes</span></a>
                         <ul>
-                            <li><a href="/work/omdyac/public_html/documents/#conForms">Con Forms</a></li>
-                    		<li><a href="/work/omdyac/public_html/documents/#docs">Documents</a></li>
-                    		<li><a href="/work/omdyac/public_html/documents/#mins">Minutes</a></li>
+                            <li><a href="/work/omdyac/documents/#conForms">Con Forms</a></li>
+                    		<li><a href="/work/omdyac/documents/#docs">Documents</a></li>
+                    		<li><a href="/work/omdyac/documents/#mins">Minutes</a></li>
                         </ul>
                     </li>
-                    <li><a href="/work/omdyac/public_html/socialaction/"><strong>Social Action</strong><span>YAC's Social Action</span></a>
+                    <li><a href="/work/omdyac/socialaction/"><strong>Social Action</strong><span>YAC's Social Action</span></a>
                         <ul>
                             <?php
                                 $mysql = new MySQL_Utilities;
@@ -209,14 +209,14 @@ if(isset($_SESSION['content'])) {
                                 $socialActionList = $mysql->getResult();
 
                                 foreach($socialActionList as $socialAction) {
-                                    echo "<li><a href='/work/omdyac/public_html/socialaction/?e=".$socialAction['id']."'>".$socialAction['Title']."</a>\n";
+                                    echo "<li><a href='/work/omdyac/socialaction/?e=".$socialAction['id']."'>".$socialAction['Title']."</a>\n";
                                 }
                             ?>
                         </ul>
                     </li>
-                    <li><a href="/work/omdyac/public_html/about/"><strong>About</strong><span>About the OMD YAC</span></a>
+                    <li><a href="/work/omdyac/about/"><strong>About</strong><span>About the OMD YAC</span></a>
                         <ul>
-                            <li><a href="/work/omdyac/public_html/about/#mission">Mission Statement</a></li>
+                            <li><a href="/work/omdyac/about/#mission">Mission Statement</a></li>
                             <?php
                                 $mysql = new MySQL_Utilities;
                                 $mysql->connect("omdyac");
@@ -224,15 +224,15 @@ if(isset($_SESSION['content'])) {
                                 $jobsList = $mysql->getResult();
 
                                 foreach($jobsList as $job) {
-                                    echo "<li><a href='/work/omdyac/public_html/about/#".$job['id']."'>".$job['Name']."</a>\n";
+                                    echo "<li><a href='/work/omdyac/about/#".$job['id']."'>".$job['Name']."</a>\n";
                                 }
                             ?>
                         </ul>
                     </li>
-                    <li class="current"><a href="/work/omdyac/public_html/contact/"><strong>Contact</strong><span>Contact the YAC</span></a>
+                    <li class="current"><a href="/work/omdyac/contact/"><strong>Contact</strong><span>Contact the YAC</span></a>
                         <ul>
-                            <li><a href="/work/omdyac/public_html/contact/#contact">Contact Members</a></li>
-                            <li><a href="/work/omdyac/public_html/contact/#email">Email the Webmaster</a></li>
+                            <li><a href="/work/omdyac/contact/#contact">Contact Members</a></li>
+                            <li><a href="/work/omdyac/contact/#email">Email the Webmaster</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -244,7 +244,7 @@ if(isset($_SESSION['content'])) {
             <div class="box box_small">
 				<div id='sitesearch_sidebar'>
 				<h4>Search Site</h4>
-				<form action="/work/omdyac/public_html/search/" id="searchform" method="get">
+				<form action="/work/omdyac/search/" id="searchform" method="get">
 						<div><input type="text" class='rounded' id="s" name="search" value=""/>
 						<input type="submit" value="." id="searchsubmit" class="button ie6fix"/>
 						</div>
@@ -255,38 +255,38 @@ if(isset($_SESSION['content'])) {
 
 					<h3>Pages</h3>
 					<ul>
-						<li><a href="/work/omdyac/public_html/">Home</a></li>
-						<li><a href="/work/omdyac/public_html/events/">Events</a>
+						<li><a href="/work/omdyac/">Home</a></li>
+						<li><a href="/work/omdyac/events/">Events</a>
                         	<ul>
                             	<?php
 								foreach($conList as $con):
-								echo "<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."'>".$con['Title']." (".$con['Type'].")</a></li>";
+								echo "<li><a href='/work/omdyac/events/?e=".$con['id']."'>".$con['Title']." (".$con['Type'].")</a></li>";
 								endforeach;
 								?>
                             </ul>
                         </li>
-                        <li><a href="/work/omdyac/public_html/documents/">Documents</a>
+                        <li><a href="/work/omdyac/documents/">Documents</a>
                         	<ul>
-                            	<li><a href="/work/omdyac/public_html/documents/#conForms">Con Forms</a></li>
-                                <li><a href="/work/omdyac/public_html/documents/#docs">Documents</a></li>
-                                <li><a href="/work/omdyac/public_html/documents/#mins">Minutes</a></li>
+                            	<li><a href="/work/omdyac/documents/#conForms">Con Forms</a></li>
+                                <li><a href="/work/omdyac/documents/#docs">Documents</a></li>
+                                <li><a href="/work/omdyac/documents/#mins">Minutes</a></li>
                             </ul>
                         </li>
-						<li><a href="/work/omdyac/public_html/socialaction/">Social Action</a></li>
-						<li><a href="/work/omdyac/public_html/about/">About</a>
+						<li><a href="/work/omdyac/socialaction/">Social Action</a></li>
+						<li><a href="/work/omdyac/about/">About</a>
                         	<ul>
-                            	<li><a href="/work/omdyac/public_html/about/#mission">Mission Statement</a></li>
-                                <li><a href="/work/omdyac/public_html/about/#jobs">Jobs</a></li>
+                            	<li><a href="/work/omdyac/about/#mission">Mission Statement</a></li>
+                                <li><a href="/work/omdyac/about/#jobs">Jobs</a></li>
                             </ul>
                         </li>
-						<li><a href="/work/omdyac/public_html/contact/">Contact</a>
+						<li><a href="/work/omdyac/contact/">Contact</a>
 							<ul>
-								<li><a href="/work/omdyac/public_html/contact/#contact">Members' Emails</a></li>
-								<li><a href="/work/omdyac/public_html/contact/#email">Email the webmaster</a></li>
+								<li><a href="/work/omdyac/contact/#contact">Members' Emails</a></li>
+								<li><a href="/work/omdyac/contact/#email">Email the webmaster</a></li>
 							</ul>
 						</li>
-                        <li><a href="/work/omdyac/public_html/socialaction/">Social Action</a></li>
-						<li><a href="/work/omdyac/public_html/search/">Search</a></li>
+                        <li><a href="/work/omdyac/socialaction/">Social Action</a></li>
+						<li><a href="/work/omdyac/search/">Search</a></li>
                    </ul>
 
 
@@ -323,7 +323,7 @@ if(isset($_SESSION['content'])) {
 									$job = $jobsList['1'];
 								}
 								if(isset($job)) {
-								echo "\t<td><a href='/work/omdyac/public_html/about?job=".$job['id']."#".$job['id']."'>".$contact['Position']."</a></td>\n";
+								echo "\t<td><a href='/work/omdyac/about?job=".$job['id']."#".$job['id']."'>".$contact['Position']."</a></td>\n";
 								} else {
 									echo "\t<td>".$contact['Position']."</td>\n";
 								}
@@ -374,7 +374,7 @@ if(isset($_SESSION['content'])) {
 					$x = 0;
 					foreach($sacList as $sac):
 						if($x < 4) {
-							echo "<li><a href='/work/omdyac/public_html/socialaction/?e=".$sac['id']."'>".$sac['Title']."</a></li>";
+							echo "<li><a href='/work/omdyac/socialaction/?e=".$sac['id']."'>".$sac['Title']."</a></li>";
 							$x++;
 						}
 					endforeach;
@@ -391,7 +391,7 @@ if(isset($_SESSION['content'])) {
 					$conList = $mysql->getResult();
 
 					foreach($conList as $con):
-						echo "<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."'>".$con['Title']."</a></li>";
+						echo "<li><a href='/work/omdyac/events/?e=".$con['id']."'>".$con['Title']."</a></li>";
 					endforeach;
 				?>
 			</ul>
@@ -399,31 +399,31 @@ if(isset($_SESSION['content'])) {
 		<div class="box box_mini">
 			<h4>Pages</h4>
 			<ul>
-  				<li><a href="/work/omdyac/public_html/">Home</a></li>
-				<li><a href="/work/omdyac/public_html/events/">Events</a></li>
-				<li><a href="/work/omdyac/public_html/documents/">Documents</a></li>
-				<li><a href="/work/omdyac/public_html/socialaction/">Social Action</a></li>
-			  	<li><a href="/work/omdyac/public_html/about/">About</a></li>
-				<li><a href="/work/omdyac/public_html/contact/">Contact</a></li>
-                <li><a href="/work/omdyac/public_html/search/">Search</a></li>
+  				<li><a href="/work/omdyac/">Home</a></li>
+				<li><a href="/work/omdyac/events/">Events</a></li>
+				<li><a href="/work/omdyac/documents/">Documents</a></li>
+				<li><a href="/work/omdyac/socialaction/">Social Action</a></li>
+			  	<li><a href="/work/omdyac/about/">About</a></li>
+				<li><a href="/work/omdyac/contact/">Contact</a></li>
+                <li><a href="/work/omdyac/search/">Search</a></li>
 			</ul>
 		</div>
 		<div class="box box_mini">
 			<h4>Miscellaneous</h4>
 			<ul>
-				<li><a href="/work/omdyac/public_html/contact/#contact">Members' Emails</a></li>
-				<li><a href="/work/omdyac/public_html/contact/#email">Email the webmaster</a></li>
+				<li><a href="/work/omdyac/contact/#contact">Members' Emails</a></li>
+				<li><a href="/work/omdyac/contact/#email">Email the webmaster</a></li>
 				<li><a href="http://www.facebook.com/omdyac/">OMD YAC Facebook</a></li>
 			</ul>
 		</div>
 
 		<div class="box box_custom_footer">
-			<a href='/work/omdyac/public_html/contact/#email' class='custom_button ie6fix rounded'><strong>Contact Form</strong><span>get in touch with us</span></a>
+			<a href='/work/omdyac/contact/#email' class='custom_button ie6fix rounded'><strong>Contact Form</strong><span>get in touch with us</span></a>
 
 
 			<div id='sitesearch_footer'>
 			<h4>Search Site</h4>
-				<form action="/work/omdyac/public_html/search/" id="searchform" method="get">
+				<form action="/work/omdyac/search/" id="searchform" method="get">
 						<div><input type="text" class='rounded' id="s" name="search" value=""/>
 						<input type="submit" value="." id="searchsubmit" class="button ie6fix"/>
 						</div>

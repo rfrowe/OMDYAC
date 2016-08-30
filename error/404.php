@@ -3,21 +3,21 @@
 <head>
 <?php
 date_default_timezone_set("America/New_York");
-require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");;
+require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/files/mysql.php");;
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 	<title>OMD YAC • 400: File Not Found</title>
 	f
-	<link rel="stylesheet" href="/work/omdyac/public_html/style.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="/work/omdyac/public_html/css/theme.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/work/omdyac/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/work/omdyac/css/theme.css" type="text/css" media="all" />
 
-    <link rel="icon" type="image/png" href="/work/omdyac/public_html/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/work/omdyac/images/favicon.png" />
 
-	<link rel="stylesheet" href="/work/omdyac/public_html/js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="all" charset="utf-8" />
+	<link rel="stylesheet" href="/work/omdyac/js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="all" charset="utf-8" />
 
-	<script type='text/javascript' src='/work/omdyac/public_html/js/jquery.js'></script>
-	<script src="/work/omdyac/public_html/js/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+	<script type='text/javascript' src='/work/omdyac/js/jquery.js'></script>
+	<script src="/work/omdyac/js/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 
 	<!--[if IE 6]>
 	<script type='text/javascript' src='js/dd_belated_png.js'></script>
@@ -47,10 +47,10 @@ require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
 	<div id="top">
 
 		    <div id="head">
-                <h1 class="logo ie6fix"><a href="/work/omdyac/public_html/" title="">OMD YAC</a></h1>
+                <h1 class="logo ie6fix"><a href="/work/omdyac/" title="">OMD YAC</a></h1>
                 <ul id="nav">
             <li><a href="/"><strong>Home</strong><span>YAC Homepage</span></a></li>
-            <li><a href="/work/omdyac/public_html/events/"><strong>Events</strong><span>Events and Info</span></a>
+            <li><a href="/work/omdyac/events/"><strong>Events</strong><span>Events and Info</span></a>
                 <ul>
                     <?php
                         $mysql = new MySQL_Utilities;
@@ -146,11 +146,11 @@ require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
                             ?>
                         </ul>
                     </li>
-                    <li><a href="/work/omdyac/public_html/documents/"><strong>Documents</strong><span>Docs and Minutes</span></a>
+                    <li><a href="/work/omdyac/documents/"><strong>Documents</strong><span>Docs and Minutes</span></a>
                         <ul>
-                            <li><a href="/work/omdyac/public_html/documents/#conForms">Con Forms</a></li>
-                    <li><a href="/work/omdyac/public_html/documents/#docs">Documents</a></li>
-                    <li><a href="/work/omdyac/public_html/documents/#mins">Minutes</a></li>
+                            <li><a href="/work/omdyac/documents/#conForms">Con Forms</a></li>
+                    <li><a href="/work/omdyac/documents/#docs">Documents</a></li>
+                    <li><a href="/work/omdyac/documents/#mins">Minutes</a></li>
                         </ul>
                     </li>
                     <li><a href="/socialaction/"><strong>Social Action</strong><span>YAC's Social Action</span></a>
@@ -197,7 +197,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
             <div class="box box_small">
 				<div id='sitesearch_sidebar'>
 				<h4>Search Site</h4>
-				<form action="/work/omdyac/public_html/search/" id="searchform" method="get">
+				<form action="/work/omdyac/search/" id="searchform" method="get">
 						<div><input type="text" class='rounded' id="s" name="search" value=""/>
 						<input type="submit" value="." id="searchsubmit" class="button ie6fix"/>
 						</div>
@@ -209,7 +209,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
 					<h3>Pages</h3>
 					<ul>
 						<li><a href="/">Home</a></li>
-						<li><a href="/work/omdyac/public_html/events/">Events</a>
+						<li><a href="/work/omdyac/events/">Events</a>
                         	<ul>
                             	<?php
 								foreach($conList as $con):
@@ -218,11 +218,11 @@ require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
 								?>
                             </ul>
                         </li>
-                        <li><a href="/work/omdyac/public_html/documents/">Documents</a>
+                        <li><a href="/work/omdyac/documents/">Documents</a>
                         	<ul>
-                            	<li><a href="/work/omdyac/public_html/documents/#conForms">Con Forms</a></li>
-                                <li><a href="/work/omdyac/public_html/documents/#docs">Documents</a></li>
-                                <li><a href="/work/omdyac/public_html/documents/#mins">Minutes</a></li>
+                            	<li><a href="/work/omdyac/documents/#conForms">Con Forms</a></li>
+                                <li><a href="/work/omdyac/documents/#docs">Documents</a></li>
+                                <li><a href="/work/omdyac/documents/#mins">Minutes</a></li>
                             </ul>
                         </li>
 						<li><a href="/socialaction/">Social Action</a></li>
@@ -294,7 +294,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
 					$x = 0;
 					foreach($sacList as $sac):
 						if($x < 4) {
-							echo "<li><a href='/work/omdyac/public_html/socialaction/?e=".$sac['id']."'>".$sac['Title']."</a></li>";
+							echo "<li><a href='/work/omdyac/socialaction/?e=".$sac['id']."'>".$sac['Title']."</a></li>";
 							$x++;
 						}
 					endforeach;
@@ -311,7 +311,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
 					$conList = $mysql->getResult();
 
 					foreach($conList as $con):
-						echo "<li><a href='/work/omdyac/public_html/events/?e=".$con['id']."'>".$con['Title']."</a></li>";
+						echo "<li><a href='/work/omdyac/events/?e=".$con['id']."'>".$con['Title']."</a></li>";
 					endforeach;
 				?>
 			</ul>
@@ -319,31 +319,31 @@ require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
 		<div class="box box_mini">
 			<h4>Pages</h4>
 			<ul>
-  				<li><a href="/work/omdyac/public_html/">Home</a></li>
-				<li><a href="/work/omdyac/public_html/events/">Events</a></li>
-				<li><a href="/work/omdyac/public_html/documents/">Documents</a></li>
-				<li><a href="/work/omdyac/public_html/socialaction/">Social Action</a></li>
-			  	<li><a href="/work/omdyac/public_html/about/">About</a></li>
-				<li><a href="/work/omdyac/public_html/contact/">Contact</a></li>
-                <li><a href="/work/omdyac/public_html/search/">Search</a></li>
+  				<li><a href="/work/omdyac/">Home</a></li>
+				<li><a href="/work/omdyac/events/">Events</a></li>
+				<li><a href="/work/omdyac/documents/">Documents</a></li>
+				<li><a href="/work/omdyac/socialaction/">Social Action</a></li>
+			  	<li><a href="/work/omdyac/about/">About</a></li>
+				<li><a href="/work/omdyac/contact/">Contact</a></li>
+                <li><a href="/work/omdyac/search/">Search</a></li>
 			</ul>
 		</div>
 		<div class="box box_mini">
 			<h4>Miscellaneous</h4>
 			<ul>
-				<li><a href="/work/omdyac/public_html/contact/#contact">Members' Emails</a></li>
-				<li><a href="/work/omdyac/public_html/contact/#email">Email the webmaster</a></li>
+				<li><a href="/work/omdyac/contact/#contact">Members' Emails</a></li>
+				<li><a href="/work/omdyac/contact/#email">Email the webmaster</a></li>
 				<li><a href="http://www.facebook.com/omdyac/">OMD YAC Facebook</a></li>
 			</ul>
 		</div>
 
 		<div class="box box_custom_footer">
-			<a href='/work/omdyac/public_html/contact/#email' class='custom_button ie6fix rounded'><strong>Contact Form</strong><span>get in touch with us</span></a>
+			<a href='/work/omdyac/contact/#email' class='custom_button ie6fix rounded'><strong>Contact Form</strong><span>get in touch with us</span></a>
 
 
 			<div id='sitesearch_footer'>
 			<h4>Search Site</h4>
-				<form action="/work/omdyac/public_html/search/" id="searchform" method="get">
+				<form action="/work/omdyac/search/" id="searchform" method="get">
 						<div><input type="text" class='rounded' id="s" name="search" value=""/>
 						<input type="submit" value="." id="searchsubmit" class="button ie6fix"/>
 						</div>

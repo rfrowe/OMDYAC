@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/public_html/files/mysql.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/files/mysql.php");
 
 $curl = curl_init('https://ohiomeadville.wufoo.com/api/v3/forms.xml');
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -20,15 +20,15 @@ $resultStatus = curl_getinfo($curl);
 
 	<title>OMD YAC • Touch Group Sort-o-matic</title>
 
-	<link rel="stylesheet" href="/work/omdyac/public_html/style.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="/work/omdyac/public_html/css/theme.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/work/omdyac/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/work/omdyac/css/theme.css" type="text/css" media="all" />
 
-    <link rel="icon" type="image/png" href="/work/omdyac/public_html/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/work/omdyac/images/favicon.png" />
 
-	<link rel="stylesheet" href="/work/omdyac/public_html/js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="all" charset="utf-8" />
+	<link rel="stylesheet" href="/work/omdyac/js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="all" charset="utf-8" />
 
-	<script type='text/javascript' src='/work/omdyac/public_html/js/jquery.js'></script>
-	<script src="/work/omdyac/public_html/js/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+	<script type='text/javascript' src='/work/omdyac/js/jquery.js'></script>
+	<script src="/work/omdyac/js/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 
 	<!--[if IE 6]>
 	<script type='text/javascript' src='js/dd_belated_png.js'></script>
@@ -63,10 +63,10 @@ $resultStatus = curl_getinfo($curl);
 	<div id="top">
 
 		    <div id="head">
-                <h1 class="logo ie6fix"><a href="/work/omdyac/public_html/" title="">OMD YAC</a></h1>
+                <h1 class="logo ie6fix"><a href="/work/omdyac/" title="">OMD YAC</a></h1>
                 <ul id="nav">
             <li><a href="/"><strong>Home</strong><span>YAC Homepage</span></a></li>
-            <li><a href="/work/omdyac/public_html/events/"><strong>Events</strong><span>Events and Info</span></a>
+            <li><a href="/work/omdyac/events/"><strong>Events</strong><span>Events and Info</span></a>
                 <ul>
                     <?php
                         $mysql = new MySQL_Utilities;
@@ -162,11 +162,11 @@ $resultStatus = curl_getinfo($curl);
                             ?>
                         </ul>
                     </li>
-                    <li class="current"><a href="/work/omdyac/public_html/documents/"><strong>Documents</strong><span>Docs and Minutes</span></a>
+                    <li class="current"><a href="/work/omdyac/documents/"><strong>Documents</strong><span>Docs and Minutes</span></a>
                         <ul>
-                            <li><a href="/work/omdyac/public_html/documents/#conForms">Con Forms</a></li>
-                    <li><a href="/work/omdyac/public_html/documents/#docs">Documents</a></li>
-                    <li><a href="/work/omdyac/public_html/documents/#mins">Minutes</a></li>
+                            <li><a href="/work/omdyac/documents/#conForms">Con Forms</a></li>
+                    <li><a href="/work/omdyac/documents/#docs">Documents</a></li>
+                    <li><a href="/work/omdyac/documents/#mins">Minutes</a></li>
                         </ul>
                     </li>
                     <li><a href="/socialaction/"><strong>Social Action</strong><span>YAC's Social Action</span></a>
@@ -213,7 +213,7 @@ $resultStatus = curl_getinfo($curl);
             <div class="box box_small">
 				<div id='sitesearch_sidebar'>
 				<h4>Search Site</h4>
-				<form action="/work/omdyac/public_html/search/" id="searchform" method="get">
+				<form action="/work/omdyac/search/" id="searchform" method="get">
 						<div><input type="text" class='rounded' id="s" name="search" value=""/>
 						<input type="submit" value="." id="searchsubmit" class="button ie6fix"/>
 						</div>
@@ -225,7 +225,7 @@ $resultStatus = curl_getinfo($curl);
 					<h3>Pages</h3>
 					<ul>
 						<li><a href="/">Home</a></li>
-						<li><a href="/work/omdyac/public_html/events/">Events</a>
+						<li><a href="/work/omdyac/events/">Events</a>
                         	<ul>
                             	<?php
 								foreach($conList as $con):
@@ -234,11 +234,11 @@ $resultStatus = curl_getinfo($curl);
 								?>
                             </ul>
                         </li>
-                        <li><a href="/work/omdyac/public_html/documents/">Documents</a>
+                        <li><a href="/work/omdyac/documents/">Documents</a>
                         	<ul>
-                            	<li><a href="/work/omdyac/public_html/documents/#conForms">Con Forms</a></li>
-                                <li><a href="/work/omdyac/public_html/documents/#docs">Documents</a></li>
-                                <li><a href="/work/omdyac/public_html/documents/#mins">Minutes</a></li>
+                            	<li><a href="/work/omdyac/documents/#conForms">Con Forms</a></li>
+                                <li><a href="/work/omdyac/documents/#docs">Documents</a></li>
+                                <li><a href="/work/omdyac/documents/#mins">Minutes</a></li>
                             </ul>
                         </li>
 						<li><a href="/socialaction/">Social Action</a></li>
@@ -348,8 +348,8 @@ $resultStatus = curl_getinfo($curl);
 			<h4>Pages</h4>
 			<ul>
   				<li><a href="/">Home</a></li>
-				<li><a href="/work/omdyac/public_html/events/">Events</a></li>
-				<li><a href="/work/omdyac/public_html/documents/">Documents</a></li>
+				<li><a href="/work/omdyac/events/">Events</a></li>
+				<li><a href="/work/omdyac/documents/">Documents</a></li>
 				<li><a href="/socialaction/">Social Action</a></li>
 			  	<li><a href="/about/">About</a></li>
 				<li><a href="/contact/">Contact</a></li>
@@ -371,7 +371,7 @@ $resultStatus = curl_getinfo($curl);
 
 			<div id='sitesearch_footer'>
 			<h4>Search Site</h4>
-				<form action="/work/omdyac/public_html/search/" id="searchform" method="get">
+				<form action="/work/omdyac/search/" id="searchform" method="get">
 						<div><input type="text" class='rounded' id="s" name="search" value=""/>
 						<input type="submit" value="." id="searchsubmit" class="button ie6fix"/>
 						</div>

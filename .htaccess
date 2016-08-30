@@ -8,5 +8,5 @@ RewriteCond %{HTTP_HOST} ^omdyac.ohiomeadville.org$ [OR]
 RewriteCond %{HTTP_HOST} ^www.omdyac.ohiomeadville.org$
 RewriteRule ^/?$ "http\:\/\/www\.ohiomeadville\.org\/yac" [R=301,L]
 
-ErrorDocument 404 /work/omdyac/public_html/error/404.php
-ErrorDocument 500 /work/omdyac/public_html/error/500.php
+ErrorDocument 404 /work/omdyac/error/404.php
+ErrorDocument 500 /work/omdyac/error/500.php
