@@ -11,12 +11,13 @@
  *              occurred
  *
  */
+require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/files/credentials.php");
 class MySQL_Utilities
 {
 	public function __construct() {
-		$this->db_host = $_SERVER['RDS_HOSTNAME'];     // Database Host
-    	$this->db_user = $_SERVER['RDS_USERNAME'];          // Username
-    	$this->db_pass = $_SERVER['RDS_PASSWORD'];
+		$this->db_host = Credentials::getHost();
+		$this->db_user = Credentials::getUser();
+		$this->db_pass = Credentials::getPass();
 		$this->db = "omdyac";
 	}
 
