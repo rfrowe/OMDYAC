@@ -11,7 +11,7 @@
  *              occurred
  *
  */
-require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/files/credentials.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/work/omdyac/files/db.secret.php");
 class MySQL_Utilities
 {
 	public function __construct() {
